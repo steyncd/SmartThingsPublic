@@ -220,7 +220,6 @@ def getModuleDevices(moduleId){
         case 41: // Sonoff S31
             devices[parentId + '-Power'] = [namespace : "BrettSheleski", type: "Tasmota-Power", label : "${thisLabel} Switch", options : [powerChannel : 1]];
             break;
-
         case 5: // Sonoff Dual
         case 19: // Sonoff Dev
         case 39: // Sonoff Dual R2
@@ -228,7 +227,6 @@ def getModuleDevices(moduleId){
             devices[parentId + '-Power-ch1'] = [namespace : "BrettSheleski", type: "Tasmota-Power", label : "${thisLabel} Switch - Channel 1", options : [powerChannel : 1]]
             devices[parentId + '-Power-ch2'] = [namespace : "BrettSheleski", type: "Tasmota-Power", label : "${thisLabel} Switch - Channel 2", options : [powerChannel : 2]]
             break;
-        
         case 7: // Sonoff 4CH
         case 13: // 4 Channel
         case 23: // Sonoff 4CH Pro
@@ -237,7 +235,6 @@ def getModuleDevices(moduleId){
             devices[parentId + '-Power-ch3'] = [namespace : "BrettSheleski", type: "Tasmota-Power", label : "${thisLabel} Switch - Channel 3", options : [powerChannel : 3]]
             devices[parentId + '-Power-ch4'] = [namespace : "BrettSheleski", type: "Tasmota-Power", label : "${thisLabel} Switch - Channel 4", options : [powerChannel : 4]]
             break;
-
         case 30: // Sonoff T1 3CH
             devices[parentId + '-Power-ch1'] = [namespace : "BrettSheleski", type: "Tasmota-Power", label : "${thisLabel} Switch - Channel 1", options : [powerChannel : 1]]
             devices[parentId + '-Power-ch2'] = [namespace : "BrettSheleski", type: "Tasmota-Power", label : "${thisLabel} Switch - Channel 2", options : [powerChannel : 2]]
@@ -250,21 +247,16 @@ def getModuleDevices(moduleId){
                 devices[parentId + "-RF-Key${i}"] = [namespace : "BrettSheleski", type: "Tasmota-RF-Bridge Button", label : "${thisLabel} - Button ${i}", options : [keyNumber : i]]
             }
             break;
-
-
 		case 18: // Generic (eg: Wemos D1 Mini)
 			// nothing to do, must read from gpio data.
 			break;
-
         case 44: // iFan02 (Need to confirm this number as it seems the numbering may have changed)
             devices[parentId + '-Light'] = [namespace : "BrettSheleski", type: "Tasmota-Power", label : "${thisLabel} Light", options : [powerChannel : 1]]
             devices[parentId + '-Fan'] = [namespace : "BrettSheleski", type: "Tasmota-Fan", label : "${thisLabel} Fan Speed", options : []]
             break;
-	    
-	case 45: // Blitzwolf SHP2
+	    case 45: // Blitzwolf SHP2
             devices[parentId + '-Power'] = [namespace : "BrettSheleski", type: "Tasmota-Power", label : "${thisLabel} Switch", options : [powerChannel : 1]];
             break;
-
         case 14: // Motor C/AC
         case 15: // ElectroDragon
         case 16: // EXS Relay
@@ -284,8 +276,6 @@ def getModuleDevices(moduleId){
         default:
             log.debug "Unknown Module ${state.module}"
             break;
-
-		
     }
 
     return devices;

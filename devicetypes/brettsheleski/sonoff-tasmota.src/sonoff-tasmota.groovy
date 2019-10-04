@@ -93,10 +93,10 @@ def parse(String description) {
 	}
 
 	// consume and set switch state
-	if ((resultJson?.POWER in ["ON", 1, "1"]) || (resultJson?.Status?.Power in [1, "1"])) {
+	if (resultJson?.data?.switch in ["on", 1, "1"]) {
 		setSwitchState(true)
 	}
-	else if ((resultJson?.POWER in ["OFF", 0, "0"]) || (resultJson?.Status?.Power in [0, "0"])) {
+	else if (resultJson?.data?.switch in ["off", 1, "1"]) {
 		setSwitchState(false)
 	}
 	else {
